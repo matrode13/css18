@@ -1,0 +1,936 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{CSS\_Task2}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{CSS: Politicians on
+Wikipedia}\label{css-politicians-on-wikipedia}
+
+\subsection{Which German politicians are captured on Wikipedia? Does
+search interest predict existence on
+Wikipedia?}\label{which-german-politicians-are-captured-on-wikipedia-does-search-interest-predict-existence-on-wikipedia}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Create list of all German politicians between XX and XY
+\item
+  Analyse search volume of politicians
+
+  \begin{itemize}
+  \tightlist
+  \item
+    2.1 Plot distribution of number of countries from which search
+    volume happens for male and female politicians
+  \item
+    2.2 Plot number of month during which search volume is above
+    threshold for for male and female politicians
+  \end{itemize}
+\item
+  Binary logistic regression
+
+  \begin{itemize}
+  \tightlist
+  \item
+    3.1 Outcome variable: article exists on Wikipedia
+  \item
+    3.2 IV: search volume -\textgreater{} number of countries and month
+  \item
+    3.3 Control: experience (e.g. how often was a politician already
+    part of parliament)
+  \end{itemize}
+\end{enumerate}
+
+\subsubsection{Answers}\label{answers}
+
+\paragraph{Task 1}\label{task-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  We create a list of all Members of The Bundestag since 2005 until now
+  (2018)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Bundestag 2005-2009 (Data:
+    https://www.abgeordnetenwatch.de/api/parliament/bundestag\%202005-2009/deputies.json)
+  \item
+    Bundestag 2009-2013 (Data:
+    https://www.abgeordnetenwatch.de/api/parliament/bundestag\%202009-2013/deputies.json)
+  \item
+    Bundestag 2013-2017 (Data:
+    https://www.abgeordnetenwatch.de/api/parliament/bundestag\%202013-2017/deputies.json)
+  \item
+    Bundestag 2017- (Data:
+    https://www.abgeordnetenwatch.de/api/parliament/bundestag/deputies.json)
+  \end{itemize}
+\end{enumerate}
+
+A copy of the original data will be kept. The Result can be seen in
+data/memberList.json http://matrode.de:1080/edit/data/memberList.json
+
+\paragraph{Task 2}\label{task-2}
+
+Instructions:
+http://matrode.de:1080/view/images/IMG\_20180530\_113335.jpg
+http://matrode.de:1080/view/images/IMG\_20180530\_113353.jpg
+
+We decided to measure the intrest (over time and by country) relative to
+the interest of Angela Merkel(who has the highest interest in the past 5
+years). Basically we normalize the data.
+
+\paragraph{Data Acquisition for Task 2.1 (interest by country) and Task
+2.2 (interest by
+month)}\label{data-acquisition-for-task-2.1-interest-by-country-and-task-2.2-interest-by-month}
+
+For each politician we make a call to the google trends API, thriugh the
+library pytrends(a newer version is used, so we have to check if it
+works in binder, in the final submission).
+
+The results of the data acquisition will be saved via pickle to:
+\textbf{/data/interest\_over\_time}
+http://matrode.de:1080/tree/data/interest\_over\_time
+\textbf{/data/interest\_by\_country}
+http://matrode.de:1080/tree/data/interest\_by\_country
+
+\paragraph{Task 2.1 (interest by
+country)}\label{task-2.1-interest-by-country}
+
+Since Google Trends only gives us relative values, we can not compare
+the results directly. Here is an Example:
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+\begin{minipage}[b]{0.37\columnwidth}\centering\strut
+Anegla Merkel
+http://matrode.de:1080/tree/images/google\_trends\_by\_region\_full.png\strut
+\end{minipage} & \begin{minipage}[b]{0.37\columnwidth}\centering\strut
+Martin Schulz
+http://matrode.de:1080/tree/images/google\_trends\_by\_region\_full\_schulz.png\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.37\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.37\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+The highest value always is 100. So it is only how distributed the
+searches are. Since most german politicians have the highest search
+interest in germany, the search interest is relative to the serach
+interest in germany.
+
+\paragraph{Task 2.2 (interest by
+month)}\label{task-2.2-interest-by-month}
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+\begin{minipage}[b]{0.37\columnwidth}\centering\strut
+Anegla Merkel
+http://matrode.de:1080/tree/images/google\_trends\_over\_time\_full.png\strut
+\end{minipage} & \begin{minipage}[b]{0.37\columnwidth}\centering\strut
+Martin Schulz
+http://matrode.de:1080/tree/images/google\_trends\_over\_time\_full\_schulz.png\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.37\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.37\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsubsection{Questions}\label{questions}
+
+\begin{itemize}
+\tightlist
+\item
+  In which format to keep the orginal data?
+\item
+  Should we use the absolute data(the ones given directly) or the
+  relative data(like we did) from Google Trends?
+\item
+  For 2.2: Do we need to make the step towards the probability?
+\end{itemize}
+
+\subsubsection{Task 3}\label{task-3}
+
+    \section{Setup}\label{setup}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}153}]:} \PY{c+c1}{\PYZsh{}create data directory where all data used will be downloaded to}
+          \PY{k+kn}{import} \PY{n+nn}{os}
+          \PY{n}{dataDirectory}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{data/}\PY{l+s+s2}{\PYZdq{}}
+          \PY{n}{timeDirectory}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{interest\PYZus{}over\PYZus{}time}\PY{l+s+s2}{\PYZdq{}}
+          \PY{n}{countryDirectory}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{interest\PYZus{}by\PYZus{}country}\PY{l+s+s2}{\PYZdq{}}
+          \PY{k}{if} \PY{o+ow}{not} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{exists}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{)}\PY{p}{:}
+              \PY{n}{os}\PY{o}{.}\PY{n}{makedirs}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{)}
+          \PY{n}{timePath}\PY{o}{=}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{,} \PY{n}{timeDirectory}\PY{p}{)}
+          \PY{k}{if} \PY{o+ow}{not} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{exists}\PY{p}{(}\PY{n}{timePath}\PY{p}{)}\PY{p}{:}
+              \PY{n}{os}\PY{o}{.}\PY{n}{makedirs}\PY{p}{(}\PY{n}{timePath}\PY{p}{)}
+          \PY{n}{countryPath}\PY{o}{=}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{,} \PY{n}{countryDirectory}\PY{p}{)}
+          \PY{k}{if} \PY{o+ow}{not} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{exists}\PY{p}{(}\PY{n}{countryPath}\PY{p}{)}\PY{p}{:}
+              \PY{n}{os}\PY{o}{.}\PY{n}{makedirs}\PY{p}{(}\PY{n}{countryPath}\PY{p}{)}
+              
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}154}]:} \PY{c+c1}{\PYZsh{}we have to find a solution that works in the binder environment}
+          \PY{c+c1}{\PYZsh{}!pip3 uninstall pytrends;cd pytrends;python3 setup.py install}
+\end{Verbatim}
+
+
+    \section{Task 1}\label{task-1}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}155}]:} \PY{c+c1}{\PYZsh{}Solution for Task 1: Data Acquisition}
+          \PY{c+c1}{\PYZsh{}get and save from abgeordnetenwatch.de/api to data}
+          \PY{k+kn}{import} \PY{n+nn}{requests}
+          \PY{k+kn}{import} \PY{n+nn}{urllib}
+          \PY{k+kn}{import} \PY{n+nn}{os}
+          \PY{k+kn}{import} \PY{n+nn}{json}
+          
+          \PY{c+c1}{\PYZsh{}helper function to convert url to local paths}
+          \PY{k}{def} \PY{n+nf}{toLocalPath}\PY{p}{(}\PY{n}{url}\PY{p}{)}\PY{p}{:}
+              \PY{k}{return} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{,} \PY{n}{url}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{/}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
+          
+          \PY{n}{parliamentsUrl}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{https://www.abgeordnetenwatch.de/api/parliaments.json}\PY{l+s+s2}{\PYZdq{}}
+          \PY{n}{parliamentsLocal}\PY{o}{=}\PY{n}{toLocalPath}\PY{p}{(}\PY{n}{parliamentsUrl}\PY{p}{)}
+          
+          \PY{c+c1}{\PYZsh{}the result of this subtask, a list of parliament members}
+          \PY{n}{memberList} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+          
+          \PY{c+c1}{\PYZsh{}if we dont have a local copy, create one}
+          \PY{k}{if} \PY{p}{(}\PY{o+ow}{not} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{isfile}\PY{p}{(}\PY{n}{parliamentsLocal}\PY{p}{)}\PY{p}{)}\PY{p}{:} 
+              \PY{c+c1}{\PYZsh{}make a local copy of the parliaments list}
+              \PY{n}{urllib}\PY{o}{.}\PY{n}{request}\PY{o}{.}\PY{n}{urlretrieve}\PY{p}{(}\PY{n}{parliamentsUrl}\PY{p}{,} \PY{n}{parliamentsLocal}\PY{p}{)}
+              \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Saved parliaments: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+} \PY{n}{parliamentsLocal}\PY{p}{)}  
+          
+          
+          \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{n}{parliamentsLocal}\PY{p}{)} \PY{k}{as} \PY{n}{parliamentsJsonFile}\PY{p}{:}
+              
+              \PY{c+c1}{\PYZsh{}load the local copy of the parliaments list file}
+              \PY{n}{parliaments} \PY{o}{=} \PY{n}{json}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n}{parliamentsJsonFile}\PY{p}{)}
+          
+              \PY{c+c1}{\PYZsh{}iterate parliaments}
+              \PY{k}{for} \PY{n}{parliament} \PY{o+ow}{in} \PY{n}{parliaments}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{parliaments}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{:}
+                  
+                  \PY{c+c1}{\PYZsh{}restrict to Bundestag, maybe add more alter}
+                  \PY{k}{if} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Bundestag}\PY{l+s+s2}{\PYZdq{}} \PY{o+ow}{in} \PY{n}{parliament}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{name}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{:}
+                      
+                      \PY{c+c1}{\PYZsh{}get the file pointing to a specific parliament}
+                      \PY{n}{parliamentMembersUrl}\PY{o}{=}\PY{n}{parliamentName}\PY{o}{=}\PY{n}{parliament}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{datasets}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{deputies}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{by\PYZhy{}name}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                      \PY{n}{parliamentMembersLocal}\PY{o}{=}\PY{n}{toLocalPath}\PY{p}{(}\PY{n}{parliamentMembersUrl}\PY{p}{)}
+                      
+                      \PY{c+c1}{\PYZsh{}if we dont have a local copy, create one}
+                      \PY{k}{if} \PY{p}{(}\PY{o+ow}{not} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{isfile}\PY{p}{(}\PY{n}{parliamentMembersLocal}\PY{p}{)}\PY{p}{)}\PY{p}{:} 
+                          \PY{c+c1}{\PYZsh{}make a local copy of a specific parliament}
+                          \PY{n}{urllib}\PY{o}{.}\PY{n}{request}\PY{o}{.}\PY{n}{urlretrieve}\PY{p}{(}\PY{n}{parliamentMembersUrl}\PY{p}{,} \PY{n}{parliamentMembersLocal}\PY{p}{)}
+                          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Saved parliament: }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{parliament}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{name}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ to }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+} \PY{n}{parliamentMembersLocal}\PY{p}{)}
+                      
+                      \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{n}{parliamentMembersLocal}\PY{p}{)} \PY{k}{as} \PY{n}{parliamentMembersJsonFile}\PY{p}{:}          
+                          \PY{n}{parliamentMembers} \PY{o}{=} \PY{n}{json}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n}{parliamentMembersJsonFile}\PY{p}{)}
+                          \PY{k}{for} \PY{n}{parliamentMember} \PY{o+ow}{in} \PY{n}{parliamentMembers}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{profiles}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{:}
+                              \PY{c+c1}{\PYZsh{}read desired values}
+                              \PY{c+c1}{\PYZsh{}we use uuid as id}
+                              \PY{n}{uuid}\PY{o}{=}\PY{n}{parliamentMember}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{meta}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{uuid}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                              \PY{n}{firstName}\PY{o}{=}\PY{n}{parliamentMember}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{personal}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{first\PYZus{}name}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                              \PY{n}{lastName}\PY{o}{=}\PY{n}{parliamentMember}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{personal}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{last\PYZus{}name}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                              \PY{n}{gender}\PY{o}{=}\PY{n}{parliamentMember}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{personal}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gender}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+          
+                              \PY{c+c1}{\PYZsh{}test if we already have a member with that uuid in our member list}
+                              \PY{k}{if}\PY{p}{(}\PY{n}{uuid} \PY{o+ow}{in} \PY{n}{memberList}\PY{p}{)}\PY{p}{:}
+                                  \PY{c+c1}{\PYZsh{}update \PYZdq{}numberOfParliaments\PYZdq{}}
+                                  \PY{n}{memberList}\PY{p}{[}\PY{n}{uuid}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{numberOfParliaments}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{=}\PY{n}{memberList}\PY{p}{[}\PY{n}{uuid}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{numberOfParliaments}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{+}\PY{l+m+mi}{1}
+                              \PY{k}{else}\PY{p}{:}
+                                  \PY{c+c1}{\PYZsh{}create new member entry}
+                                  \PY{n}{memberList}\PY{p}{[}\PY{n}{uuid}\PY{p}{]} \PY{o}{=} \PY{p}{\PYZob{}}
+                                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{firstName}\PY{l+s+s2}{\PYZdq{}} \PY{p}{:}\PY{n}{firstName}\PY{p}{,}
+                                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{lastName}\PY{l+s+s2}{\PYZdq{}} \PY{p}{:}\PY{n}{lastName}\PY{p}{,}
+                                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gender}\PY{l+s+s2}{\PYZdq{}} \PY{p}{:}\PY{n}{gender}\PY{p}{,}
+                                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{numberOfParliaments}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}\PY{l+m+mi}{1}
+                                  \PY{p}{\PYZcb{}}
+          
+          \PY{c+c1}{\PYZsh{}Save members list}
+          \PY{n}{memberListJsonPath}\PY{o}{=}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{memberList.json}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+          \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{n}{memberListJsonPath}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{w}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{memberListJsonFile}\PY{p}{:}
+              \PY{n}{json}\PY{o}{.}\PY{n}{dump}\PY{p}{(}\PY{n}{memberList}\PY{p}{,} \PY{n}{memberListJsonFile}\PY{p}{,} \PY{n}{sort\PYZus{}keys}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{indent}\PY{o}{=}\PY{l+m+mi}{4}\PY{p}{)}
+          
+          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{members saved to: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n}{memberListJsonPath}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+members saved to: data/memberList.json
+
+    \end{Verbatim}
+
+    \section{Task2}\label{task2}
+
+    \section{Data Acquisition for Task 2.1 (Interest by country) and Task
+2.2 (Interest over
+time)}\label{data-acquisition-for-task-2.1-interest-by-country-and-task-2.2-interest-over-time}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}174}]:} \PY{c+c1}{\PYZsh{}Data Acquisition Task 2.1 and 2.2}
+          \PY{k+kn}{import} \PY{n+nn}{os}
+          \PY{k+kn}{import} \PY{n+nn}{urllib}
+          \PY{k+kn}{import} \PY{n+nn}{json}
+          \PY{k+kn}{import} \PY{n+nn}{pickle}
+          \PY{k+kn}{import} \PY{n+nn}{pytrends}
+          \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+          \PY{k+kn}{from} \PY{n+nn}{pytrends}\PY{n+nn}{.}\PY{n+nn}{request} \PY{k}{import} \PY{n}{TrendReq}
+          
+          \PY{n}{dataDirectory}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{data}\PY{l+s+s2}{\PYZdq{}}
+          \PY{c+c1}{\PYZsh{}create a new directory for the data/interest\PYZus{}by\PYZus{}country}
+          \PY{n}{countryDirectory}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{interest\PYZus{}by\PYZus{}country}\PY{l+s+s2}{\PYZdq{}}
+          \PY{n}{timeDirectory}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{interest\PYZus{}over\PYZus{}time}\PY{l+s+s2}{\PYZdq{}}
+          \PY{n}{meberListJsonPath}\PY{o}{=}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{memberList.json}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+          
+          \PY{c+c1}{\PYZsh{}create output data strcuture}
+          \PY{n}{resultDataFrame} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{uuid}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{firstName}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{lastName}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gender}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{countryCount}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{timeCount}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}
+          
+          
+          \PY{c+c1}{\PYZsh{}open members list containing the politicians}
+          \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{n}{meberListJsonPath}\PY{p}{)} \PY{k}{as} \PY{n}{meberListJsonFile}\PY{p}{:}
+              \PY{c+c1}{\PYZsh{}load the local copy of the parliaments list file}
+              \PY{n}{members} \PY{o}{=} \PY{n}{json}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n}{meberListJsonFile}\PY{p}{)}
+              
+              \PY{c+c1}{\PYZsh{}for each politician, represented by the uuid}
+              \PY{k}{for} \PY{n}{memberUuid} \PY{o+ow}{in} \PY{n}{members}\PY{p}{:}
+                  
+                  \PY{n}{countryPath}\PY{o}{=}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{,} \PY{n}{countryDirectory}\PY{p}{,} \PY{n}{memberUuid}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{.pickle}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+                  \PY{n}{timePath}\PY{o}{=}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{,} \PY{n}{timeDirectory}\PY{p}{,} \PY{n}{memberUuid}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{.pickle}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+                  \PY{c+c1}{\PYZsh{}get firstName, lastName and gender}
+                  \PY{n}{firstName} \PY{o}{=} \PY{n}{members}\PY{p}{[}\PY{n}{memberUuid}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{firstName}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                  \PY{n}{lastName} \PY{o}{=} \PY{n}{members}\PY{p}{[}\PY{n}{memberUuid}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{lastName}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                  \PY{n}{gender} \PY{o}{=} \PY{n}{members}\PY{p}{[}\PY{n}{memberUuid}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gender}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+          
+                  \PY{n}{fullName} \PY{o}{=} \PY{n}{firstName} \PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+} \PY{n}{lastName}
+                  
+                  \PY{c+c1}{\PYZsh{}if we have no saved file, do a google trebds request}
+                  \PY{k}{if} \PY{p}{(}\PY{o+ow}{not} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{isfile}\PY{p}{(}\PY{n}{countryPath}\PY{p}{)}\PY{p}{)} \PY{o+ow}{and} \PY{p}{(}\PY{o+ow}{not} \PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{isfile}\PY{p}{(}\PY{n}{timePath}\PY{p}{)}\PY{p}{)}\PY{p}{:} 
+                  
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Working on }\PY{l+s+s2}{\PYZdq{}} \PY{o}{+}\PY{n}{fullName}\PY{p}{)}
+                      \PY{n}{pytrends} \PY{o}{=} \PY{n}{TrendReq}\PY{p}{(}\PY{n}{hl}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{de\PYZhy{}DE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{tz}\PY{o}{=}\PY{l+m+mi}{360}\PY{p}{)}
+                      \PY{n}{keywords} \PY{o}{=} \PY{p}{[}\PY{n}{fullName}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Angela Merkel}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                      \PY{c+c1}{\PYZsh{}cat=396 is the category for politics on google trends}
+                      \PY{n}{pytrends}\PY{o}{.}\PY{n}{build\PYZus{}payload}\PY{p}{(}\PY{n}{keywords}\PY{p}{,} \PY{n}{cat}\PY{o}{=}\PY{l+m+mi}{396}\PY{p}{,} \PY{n}{timeframe}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{today 5\PYZhy{}y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{geo}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{gprop}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                      \PY{n}{countryDataframe} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{pytrends}\PY{o}{.}\PY{n}{interest\PYZus{}by\PYZus{}region}\PY{p}{(}\PY{n}{resolution}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{COUNTRY}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
+                      \PY{c+c1}{\PYZsh{}TODO this get the weeks not the desired month }
+                      \PY{n}{timeDataframe} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{pytrends}\PY{o}{.}\PY{n}{interest\PYZus{}over\PYZus{}time}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+                      
+                      \PY{c+c1}{\PYZsh{}save to disk}
+                      \PY{n}{countryDataframe}\PY{o}{.}\PY{n}{to\PYZus{}pickle}\PY{p}{(}\PY{n}{countryPath}\PY{p}{)}
+                      \PY{n}{timeDataframe}\PY{o}{.}\PY{n}{to\PYZus{}pickle}\PY{p}{(}\PY{n}{timePath}\PY{p}{)}
+                      
+                      \PY{n}{sleep}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}
+                      
+                  \PY{c+c1}{\PYZsh{}if the a saved file use this    }
+                  \PY{k}{else}\PY{p}{:}
+                      \PY{c+c1}{\PYZsh{}print progress}
+                      \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{end}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+                      \PY{n}{countryDataframe}\PY{o}{=}\PY{n}{pickle}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n+nb}{open}\PY{p}{(}\PY{n}{countryPath}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)} 
+                      \PY{n}{timeDataframe}\PY{o}{=}\PY{n}{pickle}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n+nb}{open}\PY{p}{(}\PY{n}{timePath}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)} 
+                      
+                  \PY{c+c1}{\PYZsh{}count in how many countries we have a search interest above zero}
+                  \PY{n}{countryCount}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{countryDataframe}\PY{p}{[}\PY{n}{fullName}\PY{p}{]}\PY{o}{.}\PY{n}{nonzero}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+                  \PY{n}{timeCount}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{timeDataframe}\PY{p}{[}\PY{n}{fullName}\PY{p}{]}\PY{o}{.}\PY{n}{nonzero}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+                  
+                  \PY{c+c1}{\PYZsh{}populate dataframe}
+                  \PY{n}{resultDataFrame} \PY{o}{=} \PY{n}{resultDataFrame}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{\PYZob{}}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{uuid}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{n}{memberUuid}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{firstName}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{n}{firstName}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{lastName}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}\PY{n}{lastName}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gender}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{n}{gender}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{countryCount}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{n}{countryCount}\PY{p}{,}
+                      \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{timeCount}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{n}{timeCount}\PY{p}{,}
+                  \PY{p}{\PYZcb{}}\PY{p}{,} \PY{n}{ignore\PYZus{}index}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+          
+                  
+          \PY{c+c1}{\PYZsh{}Save members list}
+          \PY{n}{memberInterestListPath}\PY{o}{=}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{memberInterestList.pickle}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{resultDataFrame}\PY{o}{.}\PY{n}{to\PYZus{}pickle}\PY{p}{(}\PY{n}{memberInterestListPath}\PY{p}{)}
+          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{got search interest by country and by time for: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{resultDataFrame}\PY{o}{.}\PY{n}{index}\PY{p}{)}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ politicians}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\ldots}got search interest by country and by time for: 1373 politicians
+
+    \end{Verbatim}
+
+    \section{Task 2.1 (Interest by
+country)}\label{task-2.1-interest-by-country}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}171}]:} \PY{c+c1}{\PYZsh{}2.1 Plot the data}
+          \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+          \PY{k+kn}{import} \PY{n+nn}{os}
+          \PY{k+kn}{import} \PY{n+nn}{json}
+          \PY{k+kn}{import} \PY{n+nn}{pickle}
+          \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+          \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+          \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+          
+          \PY{c+c1}{\PYZsh{}load data}
+          \PY{n}{dataDirectory}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{data}\PY{l+s+s2}{\PYZdq{}}
+          \PY{n}{df}\PY{o}{=}\PY{n}{pickle}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n+nb}{open}\PY{p}{(}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{memberInterestList.pickle}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)} 
+          
+          \PY{c+c1}{\PYZsh{}combine the dataframes}
+          \PY{n}{counts}\PY{o}{=}\PY{n}{df}\PY{o}{.}\PY{n}{groupby}\PY{p}{(}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{countryCount}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gender}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{countryCount}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{unstack}\PY{p}{(}\PY{p}{)}
+          \PY{n}{plot}\PY{o}{=}\PY{n}{counts}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{kind}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{bar}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+          
+          \PY{c+c1}{\PYZsh{}set labels}
+          \PY{n}{plot}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Country Count with search interest}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{plot}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Politician count}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+          
+          \PY{c+c1}{\PYZsh{}get ignored values}
+          \PY{n}{femaleDropped}\PY{o}{=}\PY{n}{df}\PY{p}{[}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{gender}\PY{o}{==}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{female}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{countryCount}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+          \PY{n}{maleDropped}\PY{o}{=}\PY{n}{df}\PY{p}{[}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{gender}\PY{o}{==}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{male}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{countryCount}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{value\PYZus{}counts}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+          
+          \PY{c+c1}{\PYZsh{}add a remark that we removed 0 values}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{figtext}\PY{p}{(}\PY{o}{.}\PY{l+m+mi}{62}\PY{p}{,} \PY{o}{.}\PY{l+m+mi}{50}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{femaleDropped}\PY{p}{)}\PY{o}{+} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ female and}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{maleDropped}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ male politians}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ with 0 search}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ interest are excluded}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+          \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Search interest from 0 countries, female:}\PY{l+s+s2}{\PYZdq{}}\PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{femaleDropped}\PY{p}{)}\PY{o}{+}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ male: }\PY{l+s+s2}{\PYZdq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{maleDropped}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Search interest from 0 countries, female:415 male: 853
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_10_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \section{Task 2.2 (interest over
+time)}\label{task-2.2-interest-over-time}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}179}]:} \PY{c+c1}{\PYZsh{}2.2 Plot the data}
+          \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+          \PY{k+kn}{import} \PY{n+nn}{os}
+          \PY{k+kn}{import} \PY{n+nn}{json}
+          \PY{k+kn}{import} \PY{n+nn}{pickle}
+          \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+          \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+          \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+          
+          \PY{c+c1}{\PYZsh{}load data}
+          \PY{n}{dataDirectory}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{data}\PY{l+s+s2}{\PYZdq{}}
+          \PY{n}{df}\PY{o}{=}\PY{n}{pickle}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n+nb}{open}\PY{p}{(}\PY{n}{os}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{dataDirectory}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{memberInterestList.pickle}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)} 
+          
+          \PY{c+c1}{\PYZsh{}split by gender}
+          \PY{c+c1}{\PYZsh{}TODO: im not sure about this}
+          \PY{n}{df}\PY{p}{[}\PY{n}{df}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{timeCount}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{boxplot}\PY{p}{(}\PY{n}{column}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{timeCount}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{by}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{gender}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{showfliers}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+          
+          \PY{c+c1}{\PYZsh{}set labels}
+          \PY{n}{plot}\PY{o}{.}\PY{n}{set\PYZus{}xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Gender}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{plot}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Number of weeks}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+          
+          \PY{c+c1}{\PYZsh{}get ignored values}
+          \PY{n}{femaleDropped}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{p}{(}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{gender}\PY{o}{==}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{female}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{timeCount}\PY{o}{==}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{0}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+          \PY{n}{maleDropped}\PY{o}{=}\PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{p}{(}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{gender}\PY{o}{==}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{male}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{timeCount}\PY{o}{==}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{0}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+          
+          \PY{c+c1}{\PYZsh{}add a remark that we removed 0 values}
+          \PY{c+c1}{\PYZsh{}plt.figtext(.7, .6, \PYZdq{} politians with 0\PYZbs{}n weeks of search\PYZbs{}n interest are\PYZbs{}n excluded\PYZdq{})}
+          
+          \PY{c+c1}{\PYZsh{}print(\PYZdq{}Search interest of 0 weeks, female:\PYZdq{}+ str(femaleDropped)+\PYZdq{} male: \PYZdq{}+str(maleDropped))}
+          
+          \PY{c+c1}{\PYZsh{}debug}
+          \PY{n+nb}{print}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+                                   uuid   firstName        lastName  gender  \textbackslash{}
+0  001007ba-e35a-4e69-9c66-e018823a62ef     Mathias           Stein    male   
+1  0077079d-5136-4c5a-96c0-ef8ee76ccfe3        Ulli          Nissen  female   
+2  00c1508c-e69f-4813-9bd9-4607b9d8d9a7  Heidemarie  Wieczorek-Zeul  female   
+3  00e01ad7-e772-4198-b964-8ae1e5cd7e6c     Florian          Toncar    male   
+4  014490fc-3403-4255-b92d-175816269937      Ursula  Groden-Kranich  female   
+
+  countryCount timeCount  
+0            0         0  
+1            0         0  
+2            0         1  
+3            0         0  
+4            0         0  
+
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_12_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \section{Code snippet for testing if wiki page
+exists}\label{code-snippet-for-testing-if-wiki-page-exists}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}149}]:} \PY{c+c1}{\PYZsh{}Function to test if wiki page exists}
+          
+          \PY{k}{def} \PY{n+nf}{wikiPageExists}\PY{p}{(}\PY{n}{fristName}\PY{p}{,} \PY{n}{lastName}\PY{p}{,} \PY{n}{language}\PY{p}{)}\PY{p}{:}
+           \PY{c+c1}{\PYZsh{}build the query string for the wiki api}
+              \PY{n}{payload} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{action}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{query}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                         \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{list}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{search}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
+                         \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{srsearch}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZob{}firstName\PYZcb{}}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZob{}lastName\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{firstName}\PY{o}{=}\PY{n}{firstName}\PY{p}{,} \PY{n}{lastName}\PY{o}{=}\PY{n}{lastName}\PY{p}{)}\PY{p}{,}
+                         \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{format}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{json}\PY{l+s+s2}{\PYZdq{}}\PY{p}{\PYZcb{}}
+              \PY{n}{encodedPayload} \PY{o}{=} \PY{n}{urlencode}\PY{p}{(}\PY{n}{payload}\PY{p}{)}
+          
+              \PY{c+c1}{\PYZsh{}build wikipedia api url}
+              \PY{c+c1}{\PYZsh{}\PYZsh{}example document: https://de.wikipedia.org/w/api.php?action=query\PYZam{}list=search\PYZam{}srsearch=Angela+Merkel\PYZam{}format=json}
+              \PY{n}{wikiUrl}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{https://}\PY{l+s+si}{\PYZob{}language\PYZcb{}}\PY{l+s+s2}{.wikipedia.org/w/api.php?}\PY{l+s+si}{\PYZob{}encodedPayload\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{language}\PY{o}{=}\PY{n}{language}\PY{p}{,} \PY{n}{encodedPayload}\PY{o}{=}\PY{n}{encodedPayload}\PY{p}{)}
+          
+              \PY{n}{result}\PY{o}{=}\PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+          
+              \PY{c+c1}{\PYZsh{}we use try to avoid errors if no such page exists}
+              \PY{k}{try}\PY{p}{:}
+                  \PY{n}{wikiSearch} \PY{o}{=} \PY{n}{json}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n}{urllib}\PY{o}{.}\PY{n}{request}\PY{o}{.}\PY{n}{urlopen}\PY{p}{(}\PY{n}{wikiUrl}\PY{p}{)}\PY{p}{)}
+          
+                  \PY{c+c1}{\PYZsh{}read the attributes and from wikipedia and put in result of the function}
+                  \PY{n}{result}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{wikiTitle}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{wikiSearch}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{query}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{search}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{title}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                  \PY{n}{result}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{wikipageId}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{wikiSearch}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{query}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{search}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pageid}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                  \PY{n}{result}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{wikipageSnippet}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]} \PY{o}{=} \PY{n}{wikiSearch}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{query}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{search}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{snippet}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+                  \PY{c+c1}{\PYZsh{}page exists}
+                  \PY{n}{result}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{exists}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{=}\PY{k+kc}{True}
+                  
+                  \PY{c+c1}{\PYZsh{}debug}
+                  \PY{c+c1}{\PYZsh{}print(\PYZdq{}Name: \PYZob{}firstName\PYZcb{} \PYZob{}lastName\PYZcb{}, language: \PYZob{}language\PYZcb{} pageid: \PYZob{}pageId\PYZcb{}, title: \PYZob{}pageTitle\PYZcb{} url: https://\PYZob{}language\PYZcb{}.wikipedia.org/wiki/\PYZob{}pageTitleQuoted\PYZcb{}\PYZdq{}}
+                  \PY{c+c1}{\PYZsh{}      .format(firstName=firstName, lastName=lastName, language=language, pageId=pageId, pageTitle=pageTitle, pageTitleQuoted=urllib.parse.quote(pageTitle)))}
+          
+                  \PY{c+c1}{\PYZsh{}TODO check if its the right person, maybe use some categories, or search the snippet for information}
+          
+              \PY{k}{except} \PY{n+ne}{IndexError}\PY{p}{:}
+                  \PY{c+c1}{\PYZsh{}page does not exists}
+                  \PY{n}{result}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{exists}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{=}\PY{k+kc}{False}
+                  \PY{c+c1}{\PYZsh{}print(\PYZdq{}Name: \PYZob{}firstName\PYZcb{} \PYZob{}lastName\PYZcb{}, language: \PYZob{}language\PYZcb{} does not exists!\PYZdq{}}
+                  \PY{c+c1}{\PYZsh{}      .format(firstName=firstName, lastName=lastName, language=language ))}
+                  
+              \PY{k}{return} \PY{n}{result}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}150}]:} \PY{c+c1}{\PYZsh{}get information from wikipedia}
+          \PY{n}{wikiResult}\PY{o}{=}\PY{n}{wikiPageExists}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Angela}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Merkel}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{de}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+          
+          \PY{n}{wikiResult}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{exists}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+          \PY{n}{wikiResult}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{wikiTitle}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-150-b299acc305b5> in <module>()
+          1 \#get information from wikipedia
+    ----> 2 wikiResult=wikiPageExists("Angela", "Merkel", "de")
+          3 
+          4 wikiResult["exists"]
+          5 wikiResult["wikiTitle"]
+
+
+        <ipython-input-149-8474887c8b58> in wikiPageExists(fristName, lastName, language)
+          7                "srsearch":"\{firstName\} \{lastName\}".format(firstName=firstName, lastName=lastName),
+          8                "format":"json"\}
+    ----> 9     encodedPayload = urlencode(payload)
+         10 
+         11     \#build wikipedia api url
+
+
+        NameError: name 'urlencode' is not defined
+
+    \end{Verbatim}
+
+    \section{Code snippet for pytrends}\label{code-snippet-for-pytrends}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}165}]:} \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+          \PY{k+kn}{import} \PY{n+nn}{pytrends}
+          \PY{k+kn}{from} \PY{n+nn}{pytrends}\PY{n+nn}{.}\PY{n+nn}{request} \PY{k}{import} \PY{n}{TrendReq}
+          
+          \PY{n}{pytrends} \PY{o}{=} \PY{n}{TrendReq}\PY{p}{(}\PY{n}{hl}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{en}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{tz}\PY{o}{=}\PY{l+m+mi}{360}\PY{p}{)}
+          \PY{n}{kw\PYZus{}list} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Angela Merkel}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Martin Schulz}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+          \PY{c+c1}{\PYZsh{}cat=396 is the category for politics on google trends, sse here: https://github.com/pat310/google\PYZhy{}trends\PYZhy{}api/wiki/Google\PYZhy{}Trends\PYZhy{}Categories}
+          \PY{n}{pytrends}\PY{o}{.}\PY{n}{build\PYZus{}payload}\PY{p}{(}\PY{n}{kw\PYZus{}list}\PY{p}{,} \PY{n}{cat}\PY{o}{=}\PY{l+m+mi}{396}\PY{p}{,} \PY{n}{timeframe}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{today 5\PYZhy{}y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{geo}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{gprop}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+          
+          \PY{n+nb}{print}\PY{p}{(}\PY{n}{pytrends}\PY{o}{.}\PY{n}{interest\PYZus{}over\PYZus{}time}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+          \PY{n+nb}{print}\PY{p}{(}\PY{n}{pytrends}\PY{o}{.}\PY{n}{interest\PYZus{}by\PYZus{}region}\PY{p}{(}\PY{n}{resolution}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{COUNTRY}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{150}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+            Angela Merkel  Martin Schulz isPartial
+date                                              
+2013-06-09              8              0     False
+2013-06-16             13              1     False
+2013-06-23             10              1     False
+2013-06-30              8              1     False
+2013-07-07              6              1     False
+                      Angela Merkel  Martin Schulz
+geoName                                           
+Afghanistan                       0              0
+Albania                           0              0
+Algeria                         100              0
+American Samoa                    0              0
+Andorra                           0              0
+Angola                            0              0
+Anguilla                          0              0
+Antarctica                        0              0
+Antigua \& Barbuda                 0              0
+Argentina                         0              0
+Armenia                           0              0
+Aruba                             0              0
+Australia                        98              2
+Austria                          79             21
+Azerbaijan                        0              0
+Bahamas                           0              0
+Bahrain                           0              0
+Bangladesh                        0              0
+Barbados                          0              0
+Belarus                           0              0
+Belgium                          80             20
+Belize                            0              0
+Benin                             0              0
+Bermuda                           0              0
+Bhutan                            0              0
+Bolivia                           0              0
+Bosnia \& Herzegovina              0              0
+Botswana                          0              0
+Bouvet Island                     0              0
+Brazil                           99              1
+{\ldots}                             {\ldots}            {\ldots}
+Latvia                            0              0
+Lebanon                           0              0
+Lesotho                           0              0
+Liberia                           0              0
+Libya                             0              0
+Liechtenstein                     0              0
+Lithuania                         0              0
+Luxembourg                       76             24
+Macau                             0              0
+Macedonia (FYROM)               100              0
+Madagascar                        0              0
+Malawi                            0              0
+Malaysia                          0              0
+Maldives                          0              0
+Mali                              0              0
+Malta                             0              0
+Marshall Islands                  0              0
+Martinique                        0              0
+Mauritania                        0              0
+Mauritius                         0              0
+Mayotte                           0              0
+Mexico                            0              0
+Micronesia                        0              0
+Moldova                           0              0
+Monaco                            0              0
+Mongolia                          0              0
+Montenegro                        0              0
+Montserrat                        0              0
+Morocco                           0              0
+Mozambique                        0              0
+
+[150 rows x 2 columns]
+
+    \end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
