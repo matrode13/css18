@@ -21,7 +21,7 @@
         "lastName": "Wieczorek-Zeul",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 2535
+        "wikipageWordCount": 2613
     },
     "00e01ad7-e772-4198-b964-8ae1e5cd7e6c": {
         "firstName": "Florian",
@@ -77,7 +77,7 @@
         "lastName": "Paech",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 2299
+        "wikipageWordCount": 2265
     },
     "037071c0-4cd0-4cf4-949d-4f46f38a378b": {
         "firstName": "Michael",
@@ -109,7 +109,7 @@
         "lastName": "Gauland",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 16622
+        "wikipageWordCount": 16639
     },
     "040d4a72-e4dd-42eb-b6cc-cf6ab1a2fe3d": {
         "firstName": "Florian",
@@ -253,7 +253,7 @@
         "lastName": "Rainer",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 326
+        "wikipageWordCount": 23
     },
     "079928ac-d8b2-4f2c-af06-60da4dc21299": {
         "firstName": "Andrej",
@@ -461,7 +461,7 @@
         "lastName": "Niebel",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 2262
+        "wikipageWordCount": 2267
     },
     "0c32f33f-144e-4b7a-8153-b3b0154a5606": {
         "firstName": "Dagmar",
@@ -589,7 +589,7 @@
         "lastName": "Scheelen",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 274
+        "wikipageWordCount": 279
     },
     "0f409b5f-86b6-4436-bd36-c9c10d011208": {
         "firstName": "J\u00f6rg",
@@ -661,7 +661,7 @@
         "lastName": "Wawzyniak",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 805
+        "wikipageWordCount": 825
     },
     "111815da-602d-4a06-9137-2646f082a4dd": {
         "firstName": "Mario",
@@ -1013,7 +1013,7 @@
         "lastName": "Gabelmann",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 171
+        "wikipageWordCount": 164
     },
     "18bcf1d5-906c-49a0-a43e-249555464726": {
         "firstName": "Grigorios",
@@ -1093,7 +1093,7 @@
         "lastName": "Seestern-Pauly",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 373
+        "wikipageWordCount": 441
     },
     "1b97d95a-0ab7-46cc-aa16-1e0da951ef46": {
         "firstName": "Alexander",
@@ -1221,7 +1221,7 @@
         "lastName": "Fischer",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 1238
+        "wikipageWordCount": 1112
     },
     "1e5955bb-f24a-425b-8e8a-7e1b214ec6f7": {
         "firstName": "Ulrike",
@@ -1261,7 +1261,7 @@
         "lastName": "Steppuhn",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 360
+        "wikipageWordCount": 369
     },
     "1fcd466a-6aaf-48a5-8d79-fddce17d1cfc": {
         "firstName": "Susanne",
@@ -1293,7 +1293,7 @@
         "lastName": "Zimmermann",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 505
+        "wikipageWordCount": 54
     },
     "20b2d6de-ba96-46c3-b0ac-6de66d64a02f": {
         "firstName": "Michael",
@@ -1333,7 +1333,7 @@
         "lastName": "Hartmann",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 1899
+        "wikipageWordCount": 49
     },
     "2152e605-0ccb-4beb-9286-7e63bce53bf9": {
         "firstName": "Frank",
@@ -1493,7 +1493,7 @@
         "lastName": "Ehrenberg",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 687
+        "wikipageWordCount": 653
     },
     "2556b309-a2e5-4295-b3eb-202debc6e4ae": {
         "firstName": "Markus",
@@ -1869,7 +1869,7 @@
         "lastName": "Wegner",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 672
+        "wikipageWordCount": 696
     },
     "2ebe1597-55b6-4bb1-aa4d-2c27a473b60f": {
         "firstName": "Johann",
@@ -1877,7 +1877,7 @@
         "lastName": "Wadephul",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 657
+        "wikipageWordCount": 656
     },
     "2f838a37-3a32-485d-8f9f-8504cf70a40e": {
         "firstName": "Gerhard",
@@ -1885,7 +1885,7 @@
         "lastName": "Botz",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 729
+        "wikipageWordCount": 20
     },
     "2f9af274-b1ca-4abe-9e4f-e43c835d1b5b": {
         "firstName": "Tim",
@@ -1941,7 +1941,7 @@
         "lastName": "Karl",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 477
+        "wikipageWordCount": 490
     },
     "314ba3db-b3c2-4ef8-a5eb-6295ff273963": {
         "firstName": "Leni",
@@ -2229,7 +2229,7 @@
         "lastName": "M\u00fcller",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 4331
+        "wikipageWordCount": 4475
     },
     "3661ab8e-cba6-4b53-a129-9585eb15bc3e": {
         "firstName": "Jan",
@@ -2365,7 +2365,7 @@
         "lastName": "Graf Lambsdorff",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 1275
+        "wikipageWordCount": 1310
     },
     "3a14a413-12a1-4668-80da-c36f051d2ce0": {
         "firstName": "Stephan",
@@ -2685,7 +2685,7 @@
         "lastName": "Herrmann",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 389
+        "wikipageWordCount": 21
     },
     "4000e973-c360-4906-8ccc-05ffef93a0b8": {
         "firstName": "Harald",
@@ -2805,7 +2805,7 @@
         "lastName": "Protschka",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 300
+        "wikipageWordCount": 506
     },
     "42ada060-4959-4a87-8d90-63e4b09e8a08": {
         "firstName": "Albert",
@@ -2885,7 +2885,7 @@
         "lastName": "Oehme",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 566
+        "wikipageWordCount": 596
     },
     "4550574e-7ba0-4411-80a3-f52f8b955e17": {
         "firstName": "Ewald",
@@ -3229,7 +3229,7 @@
         "lastName": "Schulze",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 758
+        "wikipageWordCount": 1779
     },
     "4e3e65dd-8493-4bab-91e8-1732215540d3": {
         "firstName": "Hans Georg",
@@ -3285,7 +3285,7 @@
         "lastName": "Wester",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 344
+        "wikipageWordCount": 355
     },
     "4fdd5aa5-3d67-47f6-a866-f9f3f8b3fe4e": {
         "firstName": "Monika",
@@ -3301,7 +3301,7 @@
         "lastName": "Plo\u00df",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 520
+        "wikipageWordCount": 553
     },
     "5009a97b-c126-4902-8612-2b038d494665": {
         "firstName": "Alois",
@@ -3317,7 +3317,7 @@
         "lastName": "Jordan",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 247
+        "wikipageWordCount": 63
     },
     "50669380-81d6-4de1-a165-73ba83c42414": {
         "firstName": "Hans",
@@ -3365,7 +3365,7 @@
         "lastName": "Po\u00df",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 506
+        "wikipageWordCount": 511
     },
     "50fb590f-7788-45f1-a668-838106a4b79c": {
         "firstName": "Matthias",
@@ -3453,7 +3453,7 @@
         "lastName": "Held",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 1346
+        "wikipageWordCount": 1338
     },
     "5406ce52-ba4c-483a-9b61-687bcdc438de": {
         "firstName": "Garrelt",
@@ -3461,7 +3461,7 @@
         "lastName": "Duin",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 723
+        "wikipageWordCount": 727
     },
     "540cf02f-ec6c-4ba7-adb6-fa594db8a836": {
         "firstName": "Katja",
@@ -3485,7 +3485,7 @@
         "lastName": "Rottmann",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 362
+        "wikipageWordCount": 365
     },
     "5466e5b9-c284-434b-8683-d540c69db826": {
         "firstName": "Andreas",
@@ -3549,7 +3549,7 @@
         "lastName": "Merkel",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 17770
+        "wikipageWordCount": 17761
     },
     "57192449-4333-41ba-9fa8-74ba4b64c75b": {
         "firstName": "Lorenz G\u00f6sta",
@@ -3741,7 +3741,7 @@
         "lastName": "Hagedorn",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 682
+        "wikipageWordCount": 698
     },
     "5ab6d48b-cc7f-4f25-8a04-9ff6ca2d7960": {
         "firstName": "Katja",
@@ -3981,7 +3981,7 @@
         "lastName": "Petry",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 4611
+        "wikipageWordCount": 4634
     },
     "5f7c287b-ed09-4d42-ad5a-54bc6c7bc8b8": {
         "firstName": "Johannes Andreas",
@@ -4621,7 +4621,7 @@
         "lastName": "Skudelny",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 516
+        "wikipageWordCount": 517
     },
     "6e7f413e-5c29-46f7-92aa-4f5e2ea152e3": {
         "firstName": "Bernward",
@@ -4845,7 +4845,7 @@
         "lastName": "Petzold",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 340
+        "wikipageWordCount": 341
     },
     "749f02de-c94c-4474-b61a-3ddef6715a21": {
         "firstName": "Herlind",
@@ -4861,7 +4861,7 @@
         "lastName": "K\u00f6rber",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 341
+        "wikipageWordCount": 22
     },
     "74e2a416-b016-4789-b52d-0a606d9f2c9f": {
         "firstName": "Silke",
@@ -4893,7 +4893,7 @@
         "lastName": "B\u00f6hmer",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 1711
+        "wikipageWordCount": 1779
     },
     "7578f79e-316b-4ada-bcbd-c4d72a2fb52b": {
         "firstName": "Hubert",
@@ -4949,7 +4949,7 @@
         "lastName": "Schr\u00f6der",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 14037
+        "wikipageWordCount": 14055
     },
     "7723ee65-422a-46ae-9859-87442d29d9d3": {
         "firstName": "Petra",
@@ -5245,7 +5245,7 @@
         "lastName": "Bernhard",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 242
+        "wikipageWordCount": 244
     },
     "7c19ace7-80e4-4a37-8235-84afffb12d08": {
         "firstName": "Ingo",
@@ -5301,7 +5301,7 @@
         "lastName": "Hess",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 313
+        "wikipageWordCount": 45
     },
     "7da9cebd-1f74-4633-8507-73654433d78a": {
         "firstName": "Wolfgang",
@@ -5373,7 +5373,7 @@
         "lastName": "Engelmeier",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 646
+        "wikipageWordCount": 645
     },
     "8001acd8-3e0a-45cf-be77-3f40eed9ec77": {
         "firstName": "Ulrich",
@@ -5405,7 +5405,7 @@
         "lastName": "Schauerte",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 417
+        "wikipageWordCount": 422
     },
     "80ae0afa-5f17-4257-a2f7-dd9e0838d841": {
         "firstName": "Joachim",
@@ -5773,7 +5773,7 @@
         "lastName": "Caesar",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 977
+        "wikipageWordCount": 981
     },
     "8826543b-3fc9-49b1-9657-3ce8751d10b5": {
         "firstName": "Andreas",
@@ -5869,7 +5869,7 @@
         "lastName": "Meckel",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 1510
+        "wikipageWordCount": 1513
     },
     "8a908c80-13f7-4d1e-bc22-61837ba7f8ce": {
         "firstName": "Elisabeth",
@@ -5957,7 +5957,7 @@
         "lastName": "Harbarth",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 659
+        "wikipageWordCount": 670
     },
     "8ceb3274-5dd5-4532-b3cd-6f6acffd5b3a": {
         "firstName": "Helge",
@@ -6189,7 +6189,7 @@
         "lastName": "Deittert",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 185
+        "wikipageWordCount": 183
     },
     "92c64279-3861-446d-b2e8-0a5c6c5f1646": {
         "firstName": "Thomas",
@@ -6261,7 +6261,7 @@
         "lastName": "R\u00f6hlinger",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 284
+        "wikipageWordCount": 271
     },
     "94c99e5a-3cb6-4eec-93e7-cf7281c4b456": {
         "firstName": "Margrit",
@@ -6389,7 +6389,7 @@
         "lastName": "Lanfermann",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 430
+        "wikipageWordCount": 446
     },
     "98198f39-ea62-495a-90f2-6c149dcb3326": {
         "firstName": "Andreas",
@@ -6517,7 +6517,7 @@
         "lastName": "Hoyer",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 1017
+        "wikipageWordCount": 1020
     },
     "9ae96c42-57cf-4a30-b432-7ce832160401": {
         "firstName": "Werner",
@@ -6709,7 +6709,7 @@
         "lastName": "Diaby",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 1549
+        "wikipageWordCount": 1536
     },
     "9ecb1df1-93ed-4095-9583-38c3a30b85d0": {
         "firstName": "Ulrich",
@@ -6821,7 +6821,7 @@
         "lastName": "Hiller-Ohm",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 933
+        "wikipageWordCount": 31
     },
     "a1939dcb-8049-479e-b61f-71d86ad2478c": {
         "firstName": "Volker",
@@ -6837,7 +6837,7 @@
         "lastName": "Annen",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 754
+        "wikipageWordCount": 755
     },
     "a2ab7799-17f4-407e-a8a5-960b91d4a977": {
         "firstName": "Heiko",
@@ -7085,7 +7085,7 @@
         "lastName": "Solms",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 1559
+        "wikipageWordCount": 1594
     },
     "a9ed779d-fa41-43d6-a406-5f8621e20099": {
         "firstName": "Michael",
@@ -7221,7 +7221,7 @@
         "lastName": "Hill",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 353
+        "wikipageWordCount": 33
     },
     "ad2d8058-60fb-45de-9fe6-12c4e0ba893e": {
         "firstName": "Brigitte",
@@ -7333,7 +7333,7 @@
         "lastName": "von Abercron",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 410
+        "wikipageWordCount": 414
     },
     "af6d6db0-8954-4eb4-b62c-8901638f489a": {
         "firstName": "Herbert",
@@ -7477,7 +7477,7 @@
         "lastName": "Krellmann",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 243
+        "wikipageWordCount": 235
     },
     "b20366d1-b4ed-4efd-a07d-3675536770f9": {
         "firstName": "Maria",
@@ -7629,7 +7629,7 @@
         "lastName": "L\u00f6tzer",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 320
+        "wikipageWordCount": 324
     },
     "b5b59a73-2820-4967-829b-916c855bc2b0": {
         "firstName": "Bettina",
@@ -7677,7 +7677,7 @@
         "lastName": "Tatti",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 100
+        "wikipageWordCount": 96
     },
     "b6d4eae8-8d9f-44c0-abab-7f7918656a04": {
         "firstName": "Ulrike",
@@ -7693,7 +7693,7 @@
         "lastName": "Kraft",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 22
+        "wikipageWordCount": 31
     },
     "b71c308f-2cf3-4f24-a880-c427c4267369": {
         "firstName": "Christian",
@@ -7741,7 +7741,7 @@
         "lastName": "Kurth",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 515
+        "wikipageWordCount": 25
     },
     "b7eee357-7e4c-4db6-b9b5-5b9bb0b44ed5": {
         "firstName": "Kerstin",
@@ -7997,7 +7997,7 @@
         "lastName": "Lintner",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 921
+        "wikipageWordCount": 962
     },
     "bd7fe2e5-a9d3-445c-a4de-cf8387577c35": {
         "firstName": "Martin",
@@ -8037,7 +8037,7 @@
         "lastName": "Steinmeier",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 4518
+        "wikipageWordCount": 4516
     },
     "be979c05-35ac-45d7-8445-c3423c7b6852": {
         "firstName": "Winfried",
@@ -8045,7 +8045,7 @@
         "lastName": "Nachtwei",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 359
+        "wikipageWordCount": 364
     },
     "beec1f39-ebdb-4f82-a106-3841a5cc368e": {
         "firstName": "Monika",
@@ -8117,7 +8117,7 @@
         "lastName": "Bernstein",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 320
+        "wikipageWordCount": 322
     },
     "c050c590-c0b7-4223-b063-f2c287aa473b": {
         "firstName": "Florian",
@@ -8461,7 +8461,7 @@
         "lastName": "Franke",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 718
+        "wikipageWordCount": 727
     },
     "c99b7070-27c4-4b8e-9d5e-4f3165822fac": {
         "firstName": "Michael",
@@ -8685,7 +8685,7 @@
         "lastName": "Steffel",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 1792
+        "wikipageWordCount": 1816
     },
     "cd59925a-aa7e-49f5-901b-fef24bb9d1af": {
         "firstName": "Dietmar",
@@ -8781,7 +8781,7 @@
         "lastName": "Jongen",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 3261
+        "wikipageWordCount": 3282
     },
     "cf2fb66b-95e2-49c8-aad0-8e7fa97b929d": {
         "firstName": "Ulrike",
@@ -8821,7 +8821,7 @@
         "lastName": "M\u00fcnz",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 323
+        "wikipageWordCount": 23
     },
     "d00f3cb5-e187-4aea-acc2-fbee1aec74c4": {
         "firstName": "Hilde",
@@ -8845,7 +8845,7 @@
         "lastName": "Roth",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 1086
+        "wikipageWordCount": 1112
     },
     "d05dbbd4-efa0-44dc-8d48-a6c33bf2bcce": {
         "firstName": "Georg",
@@ -8981,7 +8981,7 @@
         "lastName": "Weisskirchen",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 465
+        "wikipageWordCount": 470
     },
     "d30e25ba-dd90-4c03-8de2-b2f1f96494fc": {
         "firstName": "Jens",
@@ -9093,7 +9093,7 @@
         "lastName": "Beeck",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 399
+        "wikipageWordCount": 447
     },
     "d61d0d88-8a14-40d0-9db1-2556555a6820": {
         "firstName": "G\u00f6kay",
@@ -9221,7 +9221,7 @@
         "lastName": "Schmidt",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 573
+        "wikipageWordCount": 55
     },
     "d7ca65c8-8998-42a4-92f4-c6c381aff90b": {
         "firstName": "Johannes",
@@ -9253,7 +9253,7 @@
         "lastName": "Hartmann",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 601
+        "wikipageWordCount": 1246
     },
     "d82c9816-e12a-457b-9336-5fcd2aaa182a": {
         "firstName": "Michael",
@@ -9301,7 +9301,7 @@
         "lastName": "Glaser",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 1747
+        "wikipageWordCount": 1769
     },
     "d9aadf4b-dc13-4faf-953c-fdad15e7a324": {
         "firstName": "Florian",
@@ -9549,7 +9549,7 @@
         "lastName": "Theurer",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 1371
+        "wikipageWordCount": 1431
     },
     "e0a86aa6-802a-486f-854f-4f98de4eee55": {
         "firstName": "Dieter",
@@ -9613,7 +9613,7 @@
         "lastName": "Brunner",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 605
+        "wikipageWordCount": 987
     },
     "e34d2883-27c3-41ff-90c6-9cc604fe287e": {
         "firstName": "Bernhard",
@@ -9629,7 +9629,7 @@
         "lastName": "Strengmann-Kuhn",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 36
+        "wikipageWordCount": 1014
     },
     "e3d588da-b94b-4a80-9d79-575678f5a02b": {
         "firstName": "Katrin",
@@ -9701,7 +9701,7 @@
         "lastName": "Fritz",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 7156
+        "wikipageWordCount": 877
     },
     "e4b1c929-480b-49c7-a2fe-81d22a1e1db3": {
         "firstName": "Klaus W.",
@@ -9717,7 +9717,7 @@
         "lastName": "M\u00fcller",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 582
+        "wikipageWordCount": 581
     },
     "e4e4516d-22a0-4ac0-b3e3-c3eb33a43c3c": {
         "firstName": "Katja",
@@ -9733,7 +9733,7 @@
         "lastName": "Seehofer",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 4142
+        "wikipageWordCount": 4496
     },
     "e5166f0c-9376-4181-9a6f-2dcbba7ad49b": {
         "firstName": "Bernd",
@@ -9829,7 +9829,7 @@
         "lastName": "Karliczek",
         "numberOfParliaments": 2,
         "wikipageExists": true,
-        "wikipageWordCount": 1142
+        "wikipageWordCount": 1135
     },
     "e7d6dea5-f5a3-47cb-99de-d8f833101699": {
         "firstName": "Markus",
@@ -9845,7 +9845,7 @@
         "lastName": "Pasemann",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 308
+        "wikipageWordCount": 668
     },
     "e8ae491e-1c02-4cd9-b283-6ef456c179be": {
         "firstName": "Christina",
@@ -9997,7 +9997,7 @@
         "lastName": "von Storch",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 5214
+        "wikipageWordCount": 5154
     },
     "eb69b75e-37df-412f-bb48-fc39ab8d4d46": {
         "firstName": "Anke",
@@ -10005,7 +10005,7 @@
         "lastName": "Domscheit-Berg",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 2254
+        "wikipageWordCount": 2249
     },
     "ebbd47c8-1d81-48eb-9598-2f32188d0dbd": {
         "firstName": "Stefan",
@@ -10013,7 +10013,7 @@
         "lastName": "M\u00fcller",
         "numberOfParliaments": 4,
         "wikipageExists": true,
-        "wikipageWordCount": 615
+        "wikipageWordCount": 165
     },
     "ebda73df-04fb-414d-a5ea-f033ee9fc68f": {
         "firstName": "G\u00fcnter",
@@ -10173,7 +10173,7 @@
         "lastName": "Teuteberg",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 1251
+        "wikipageWordCount": 1254
     },
     "ee650c23-9ebc-486d-bcf1-534dc22ad5ee": {
         "firstName": "Peter",
@@ -10349,7 +10349,7 @@
         "lastName": "Boehringer",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 1747
+        "wikipageWordCount": 1729
     },
     "f23abd74-5710-40ba-a6d9-f637615149b3": {
         "firstName": "Andreas",
@@ -10573,7 +10573,7 @@
         "lastName": "Binninger",
         "numberOfParliaments": 3,
         "wikipageExists": true,
-        "wikipageWordCount": 939
+        "wikipageWordCount": 942
     },
     "f6bdbded-75c6-430a-9ea6-83de9abbd08f": {
         "firstName": "Dagmar G.",
@@ -10629,7 +10629,7 @@
         "lastName": "Pohl",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 446
+        "wikipageWordCount": 27
     },
     "f759a416-0e51-43d8-9e70-ecc8c6fd6559": {
         "firstName": "Dietlind",
@@ -10653,7 +10653,7 @@
         "lastName": "Pflugradt",
         "numberOfParliaments": 1,
         "wikipageExists": true,
-        "wikipageWordCount": 301
+        "wikipageWordCount": 309
     },
     "f7da5454-b28a-41f1-b93f-f5bfe3ee2674": {
         "firstName": "Uwe",

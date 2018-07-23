@@ -1,0 +1,19 @@
+                      OLS Regression Results                      
+Dep. Variable:   ,wordCount       ,  R-squared:         ,   0.344 
+Model:           ,OLS             ,  Adj. R-squared:    ,   0.342 
+Method:          ,Least Squares   ,  F-statistic:       ,   238.8 
+Date:            ,Sun, 22 Jul 2018,  Prob (F-statistic):,1.35e-124
+Time:            ,16:59:15        ,  Log-Likelihood:    , -11394. 
+No. Observations:,  1373          ,  AIC:               ,2.280e+04
+Df Residuals:    ,  1369          ,  BIC:               ,2.282e+04
+Df Model:        ,     3          ,                     ,         
+Covariance Type: ,nonrobust       ,                     ,         
+               ,   coef   , std err ,    t    ,P>|t| ,  [0.025 ,  0.975] 
+const          ,  506.1883,   58.462,    8.658, 0.000,  391.504,  620.873
+countryCount   ,  258.5894,   10.099,   25.605, 0.000,  238.778,  278.401
+binaryGender   , -128.2387,   56.061,   -2.287, 0.022, -238.214,  -18.263
+parliamentCount,  120.3204,   25.555,    4.708, 0.000,   70.189,  170.452
+Omnibus:      ,1864.776,  Durbin-Watson:     ,   2.068  
+Prob(Omnibus):, 0.000  ,  Jarque-Bera (JB):  ,466621.836
+Skew:         , 7.422  ,  Prob(JB):          ,    0.00  
+Kurtosis:     ,92.085  ,  Cond. No.          ,    7.05  
